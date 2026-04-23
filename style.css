@@ -1,0 +1,218 @@
+/* Style de base */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F5F5F5;
+    margin: 0;
+    color: #333;
+}
+
+/* BARRE DE NAVIGATION NOIRE */
+nav {
+    background-color: #232323;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 45px;
+}
+
+/* MENU AU CENTRE */
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 15px;
+}
+
+.menu a:hover {
+    color: #7B61FF;
+}
+
+/* BARRE DE RECHERCHE */
+.recherche {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.recherche input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 14px;
+    width: 150px;
+}
+
+.recherche span {
+    color: #333;
+    cursor: pointer;
+}
+
+/* ICÔNES À DROITE */
+.icones {
+    display: flex;
+    gap: 20px;
+}
+
+.icones span {
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.icones span:hover {
+    color: #7B61FF;
+}
+
+/* CONTENU PRINCIPAL */
+main {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+h2 {
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #1a1a1a;
+    margin-top: 30px;
+}
+
+/* Les pages sont cachées au départ */
+.page {
+    display: none;
+}
+
+/* BOUTONS */
+.bouton {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.bouton:hover {
+    background-color: #7B61FF;
+}
+
+/* GRILLE DE PRODUITS */
+.produits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.produit {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.produit img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    background-color: #F5F5F5;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.produit h4 {
+    margin: 15px 0 8px 0;
+    color: #1a1a1a;
+}
+
+.prix {
+    color: #7B61FF;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* FORMULAIRES */
+form {
+    max-width: 450px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+form input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+form input:focus, textarea:focus {
+    outline: none;
+    border-color: #7B61FF;
+}
+
+/* TABLEAU DU PANIER */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+table th {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+/* PIED DE PAGE */
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}

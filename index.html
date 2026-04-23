@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>TechStore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <div class="logo">
+        <img src="LOGO.png" alt="LOGO">
+    </div>
+
+    <div class="menu">
+        <a href="#" onclick="afficherPage('accueil')">Accueil</a>
+        <a href="#" onclick="afficherPage('produits')">Catalogue</a>
+        <a href="#" onclick="afficherPage('apropos')">Nouveautés</a>
+        <a href="#" onclick="afficherPage('contact')">Contact</a>
+    </div>
+
+    <!-- BARRE DE RECHERCHE -->
+    <div class="recherche">
+        <input type="text" id="barreRecherche" placeholder="Rechercher..." onkeyup="rechercher()">
+        <span>🔍</span>
+    </div>
+
+    <div class="icones">
+        <span onclick="afficherPage('panier')">🛒</span>
+        <span onclick="afficherPage('connexion')">👤</span>
+    </div>
+</nav>
+
+<main>
+
+    <!-- PAGE 1 : ACCUEIL -->
+    <section id="accueil" class="page">
+        <h2>Bienvenue chez TechStore</h2>
+        <p>Votre boutique high-tech au meilleur prix.</p>
+
+        <h3>Produits populaires</h3>
+        <div class="produits">
+            <div class="produit">
+                <img src="iphone orange.png" alt="iPhone">
+                <h4>iPhone Orange</h4>
+                <p class="prix">1 299 €</p>
+            </div>
+            <div class="produit">
+                <img src="iphone titane.png" alt="iPhone">
+                <h4>iPhone Titane</h4>
+                <p class="prix">999 €</p>
+            </div>
+            <div class="produit">
+                <img src="iphone bleu.png" alt="iPhone">
+                <h4>iPhone Bleu</h4>
+                <p class="prix">899 €</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 2 : CATALOGUE -->
+    <section id="produits" class="page">
+        <h2>Catalogue</h2>
+        <div class="produits">
+            <div class="produit">
+                <img src="iphone orange.png" alt="iPhone">
+                <h4>iPhone Orange</h4>
+                <p class="prix">1 299 €</p>
+                <button class="bouton" onclick="ajouterAuPanier('iPhone Orange', 1299)">Ajouter au panier</button>
+            </div>
+            <div class="produit">
+                <img src="iphone titane.png" alt="iPhone">
+                <h4>iPhone Titane</h4>
+                <p class="prix">999 €</p>
+                <button class="bouton" onclick="ajouterAuPanier('iPhone Titane', 1199)">Ajouter au panier</button>
+            </div>
+            <div class="produit">
+                <img src="iphone bleu.png" alt="iPhone">
+                <h4>iPhone Bleu</h4>
+                <p class="prix">750 €</p>
+                <button class="bouton" onclick="ajouterAuPanier('iPhone Bleu', 750)">Ajouter au panier</button>
+            </div>
+            <div class="produit">
+                <img src="laptop.png" alt="MacBook">
+                <h4>MacBook Pro</h4>
+                <p class="prix">1 199 €</p>
+                <button class="bouton" onclick="ajouterAuPanier('MacBook Pro', 1199)">Ajouter au panier</button>
+            </div>
+            <div class="produit">
+                <img src="ipad.png" alt="iPad">
+                <h4>iPad Air</h4>
+                <p class="prix">699 €</p>
+                <button class="bouton" onclick="ajouterAuPanier('iPad Air', 699)">Ajouter au panier</button>
+            </div>
+            <div class="produit">
+                <img src="airpods.png" alt="AirPods">
+                <h4>AirPods Pro</h4>
+                <p class="prix">279 €</p>
+                <button class="bouton" onclick="ajouterAuPanier('AirPods Pro', 279)">Ajouter au panier</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 3 : PANIER -->
+    <section id="panier" class="page">
+        <h2>Mon panier</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Prix</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="panierContenu">
+                <!-- Les produits ajoutés apparaîtront ici -->
+            </tbody>
+        </table>
+        <h3 id="total">Total : 0 €</h3>
+        <a href="#" onclick="afficherPage('adresse')" class="bouton">Passer la commande</a>
+    </section>
+
+    <!-- PAGE 4 : CONNEXION -->
+    <section id="connexion" class="page">
+        <h2>Connexion</h2>
+        <form>
+            <label>Email :</label>
+            <input type="email" placeholder="exemple@mail.com">
+            <label>Mot de passe :</label>
+            <input type="password">
+            <button class="bouton">Se connecter</button>
+            <p>Pas de compte ? <a href="#" onclick="afficherPage('inscription')">Inscrivez-vous</a></p>
+        </form>
+    </section>
+
+    <!-- PAGE 5 : INSCRIPTION -->
+    <section id="inscription" class="page">
+        <h2>Créer un compte</h2>
+        <form>
+            <label>Nom :</label>
+            <input type="text">
+            <label>Prénom :</label>
+            <input type="text">
+            <label>Email :</label>
+            <input type="email">
+            <label>Mot de passe :</label>
+            <input type="password">
+            <button class="bouton">S'inscrire</button>
+        </form>
+    </section>
+
+    <!-- PAGE 6 : ADRESSE -->
+    <section id="adresse" class="page">
+        <h2>Adresse de livraison</h2>
+        <form>
+            <label>Nom :</label>
+            <input type="text">
+            <label>Adresse :</label>
+            <input type="text">
+            <label>Code postal :</label>
+            <input type="text">
+            <label>Ville :</label>
+            <input type="text">
+            <label>Téléphone :</label>
+            <input type="tel">
+            <a href="#" onclick="afficherPage('paiement')" class="bouton">Continuer</a>
+        </form>
+    </section>
+
+    <!-- PAGE 7 : PAIEMENT -->
+    <section id="paiement" class="page">
+        <h2>Paiement</h2>
+        <form>
+            <label>Numéro de carte :</label>
+            <input type="text" placeholder="1234 5678 9012 3456">
+            <label>Nom sur la carte :</label>
+            <input type="text">
+            <label>Date d'expiration :</label>
+            <input type="text" placeholder="MM/AA">
+            <label>CVV :</label>
+            <input type="text" placeholder="123">
+            <a href="#" onclick="afficherPage('confirmation')" class="bouton">Payer</a>
+        </form>
+    </section>
+
+    <!-- PAGE 8 : CONFIRMATION -->
+    <section id="confirmation" class="page">
+        <h2>Merci pour votre commande !</h2>
+        <p>Votre commande a bien été enregistrée.</p>
+        <p>Livraison sous 3 à 5 jours.</p>
+        <a href="#" onclick="afficherPage('accueil')" class="bouton">Retour à l'accueil</a>
+    </section>
+
+    <!-- PAGE 9 : NOUVEAUTES -->
+    <section id="apropos" class="page">
+        <h2>Nouveautés</h2>
+        <p>Découvrez nos dernières nouveautés high-tech.</p>
+
+        <div class="produits">
+            <div class="produit">
+                <img src="casque.png" alt="Casque">
+                <h4>Casque Audio</h4>
+                <p class="prix">299 €</p>
+                <button class="bouton" onclick="ajouterAuPanier('Casque Audio', 299)">Ajouter au panier</button>
+            </div>
+            <div class="produit">
+                <img src="speaker.png" alt="Speaker">
+                <h4>Speaker</h4>
+                <p class="prix">199 €</p>
+                <button class="bouton" onclick="ajouterAuPanier('Speaker', 199)">Ajouter au panier</button>
+            </div>
+            <div class="produit">
+                <img src="chargeur.png" alt="Chargeur">
+                <h4>Chargeur</h4>
+                <p class="prix">29 €</p>
+                <button class="bouton" onclick="ajouterAuPanier('Chargeur', 29)">Ajouter au panier</button>
+            </div>
+            <div class="produit">
+                <img src="souris.png" alt="Souris">
+                <h4>Souris</h4>
+                <p class="prix">29 €</p>
+                <button class="bouton" onclick="ajouterAuPanier('Souris', 29)">Ajouter au panier</button>
+            </div>
+            <div class="produit">
+                <img src="iphone15.png" alt="iPhone 15">
+                <h4>iPhone 15</h4>
+                <p class="prix">750 €</p>
+                <button class="bouton" onclick="ajouterAuPanier('iPhone 15', 899)">Ajouter au panier</button>
+            </div>
+            <div class="produit">
+                <img src="airpods.png" alt="AirPods">
+                <h4>AirPods Pro</h4>
+                <p class="prix">279 €</p>
+                <button class="bouton" onclick="ajouterAuPanier('AirPods Pro', 279)">Ajouter au panier</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 10 : CONTACT -->
+    <section id="contact" class="page">
+        <h2>Contact</h2>
+        <p> Techstore@gmail.fr</p>
+        <p> 01 23 45 67 89</p>
+        <p> 10 rue des Champs, 75000 Paris</p>
+        <form>
+            <label>Nom :</label>
+            <input type="text">
+            <label>Email :</label>
+            <input type="email">
+            <label>Message :</label>
+            <textarea rows="5"></textarea>
+            <button class="bouton">Envoyer</button>
+        </form>
+    </section>
+
+</main>
+
+<footer>
+    <p>TechStore</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
